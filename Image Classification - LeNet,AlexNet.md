@@ -14,7 +14,9 @@ MLP(Multi Layer Perceptron)에 의해 XOR 문제가 해결되면서 기술이 �
 
 ### AlexNet
 
-conv later, max-pooling layer, dropdout layer 5개, fully connected layer 3개를 가졌다. ReLU 함수를 사용하고, batch stochastic gradient descent, 그리고 대회에 적합하게 1000개의 output classification을 얻을 수 있다. 학습을 90 epochs를 수행하였다.
+conv later, max-pooling layer, dropdout layer 5개, fully connected layer 3개를 가졌다. ReLU 함수를 사용하고, batch stochastic gradient descent, 그리고 대회에 적합하게 1000개의 output classification을 얻을 수 있다. 학습을 90 epochs를 수행하였다. 두 부분으로 구조가 구분되는데, 2개의 GPU를 사용한 병렬구조이기 때문이다. 
 
 ![img](https://t1.daumcdn.net/cfile/tistory/99FEB93C5C80B5192E)
+
+AlexNet의 특징으로 GPU 병렬연산을 통해 추가적인 정보 습득 가능, ReLU 함수가 사용되면서 같은 정확도를 유지하면서 Tanh을 사용하는 것보다 6배 빨랐다. 또한 Dropout의 사용을 통해 학습을 하고, Overlapping max pooling 방법을 사용했다. 과적합을 막기 위해 data augmentation이란 방법을 통해 데이터 양을 늘렸다.(mirror image, random crops)
 
